@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    color: #5d001e;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Corazones flotantes */
+.heart {
+    position: absolute;
+    color: rgba(255, 105, 180, 0.7);
+    font-size: 20px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-100px) rotate(180deg); }
+}
+
+/* Navegación */
+.navbar {
+    position: fixed;
+    top: 20px;
+    width: 90%;
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    color: #5d001e;
+}
+
+.nav-btn.active, .nav-btn:hover {
+    background: #ff4d8d;
+    color: white;
+}
+
+/* Secciones */
+.section {
+    display: none;
+    padding: 100px 20px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #9a1750;
+}
+
+.title .name {
+    color: #e31b6d;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #5d001e;
+}
+
+.photo-frame {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 40px;
+    border: 10px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.main-photo:hover {
+    transform: scale(1.05);
+}
+
+.love-btn {
+    background: linear-gradient(to right, #e31b6d, #ff4081);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(227, 27, 109, 0.4);
+}
+
+.love-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(227, 27, 109, 0.6);
+}
+
+/* Galería */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    width: 14rem;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Carta */
+.letter-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.letter-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.signature {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem;
+    color: #e31b6d;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Cuenta regresiva */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.countdown-box span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e31b6d;
+    display: block;
+}
+
+/* Reproductor de música */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#musicToggle {
+    background: #e31b6d;
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+#musicToggle:hover {
+    transform: scale(1.1);
+}
